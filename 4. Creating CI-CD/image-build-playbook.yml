@@ -1,0 +1,22 @@
+# This playbook creates image  using the Dockerfile present in the same directory, add tag, upload to dockerhub and then delete local image copy.
+#Inside dockerfile we have mentioned to copy the webapp.war sent by Jenkins job into tomcat.
+---
+- name: "This play is to build image of project"
+  hosts: localhost
+  become: true
+
+  tasks:
+  - name: create docker image using war file
+    command: docker build -t simple-devops-image:latest .
+    args:
+      chdir: /opt/K8s-playbooks
+
+  - name: create tag to image
+    command: docker tag simple-devops-image farhaanshamsee/simple-devops-image
+
+  - name: push image on to dockerhub
+    command: docker push farhaanshamsee/simple-devops-image
+
+  - name: remove docker images form ansible server
+    command: docker rmi simple-devops-image:latest farhaanshamsee/simple-devops-image
+    ignore_errors: yes
