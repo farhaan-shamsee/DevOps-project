@@ -21,14 +21,14 @@
 1. We will set repo and then install Jenkins
     ```sh
    yum -y install wget
-   sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+   sudo wget -O /etc/yum.repos.d/Jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
    sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
    yum -y install jenkins
    ```    
 
-   ### Start Jenkins
+1. Start Jenkins
    ```sh
-   # Start jenkins service
+   # Start Jenkins service
    service jenkins start
 
    # Setup Jenkins to start at boot,
@@ -36,7 +36,7 @@
    ```
 
    ### Accessing Jenkins
-   By default jenkins runs at port `8080`, we can access jenkins at
+   By default Jenkins runs at port `8080`, we can access Jenkins at
    ```sh
    http://YOUR-SERVER-PUBLIC-IP:8080
    ```
@@ -45,11 +45,11 @@
     We install GIT on server and integrate it with Jenkins
 
 ## Install GIT
-1. Install git packages on jenkins server
+1. Install git packages on Jenkins server
    ```sh
    yum install git -y
    ```
-#### Setup Git on jenkins console
+#### Setup Git on Jenkins console
 - Install git plugin without restart  
   - `Manage Jenkins` > `Jenkins Plugins` > `available` > `github`
 

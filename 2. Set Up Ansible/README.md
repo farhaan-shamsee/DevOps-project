@@ -14,7 +14,7 @@
    ```
 1. Create the ansible directory
    ```sh
-      sudo mkdir /etc/ansible   
+   sudo mkdir /etc/ansible   
    ```
 
 1. Create a user called ansadmin:  
@@ -41,13 +41,13 @@
    sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
    sudo service sshd reload
    ```   
-### Upto this step, I ahve already configured in the User Data script, below needs to be done manually
+### Upto this step, I have already configured in the User Data script, below needs to be done manually
 
 1. Log in as a ansadmin user on master and generate ssh key (on Control node)
    ```sh 
    sudo su - ansadmin
    ssh-keygen
-   Key is present at .ssh location
+   #Key is present at .ssh location
    ```
 
 1. Login into Docker Hub
@@ -58,7 +58,7 @@
 
 ## Integrating Kubernetes cluster with Ansible
 
-1. Login to ansible server as ansadmin and copy public key onto kubernetes cluseter master node to enable password less authentication.
+1. Login to ansible server as ansadmin and copy public key onto kubernetes cluster master node to enable password less authentication.
    ```sh
    su -i ansadmin
    cd .ssh

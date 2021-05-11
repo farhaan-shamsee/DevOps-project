@@ -5,6 +5,7 @@
 
 ## Installing AWS CLI
 1. Install AWSCLI
+
    ```sh
      sudo curl https://s3.amazonaws.com/aws-cli/awscli-bundle.zip -o awscli-bundle.zip
      sudo apt install unzip python
@@ -15,6 +16,7 @@
 
 ## Installing KUBECTL
 1. Install kubectl on ubuntu instance
+
    ```sh
       #installing kubectl
       sudo curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
@@ -26,6 +28,7 @@
 
 ## Installing KOPS and setting up Cluster
 1. Install kops on ubuntu instance
+
    ```sh
       #installing KOPS: KOPS is used to setup Cluster on AWS:
       sudo curl -LO https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
@@ -42,11 +45,11 @@
    ```sh
       #This is done using the Terraform Script
    ```
-1. Configuring aws cli to create in mumbai region only      
+1. Configuring aws cli to create in Mumbai region only      
    ```sh
       sudo aws configure ap-south-1
    ```
-### Upto this point I have configured in the User Data script, below needs to be done manually
+### Upto this point I have configured in the User Data script, below steps needs to be done manually
 
 1. Create a Route53 private hosted zone
    ```sh
@@ -54,7 +57,7 @@
    Domain Name: farhaan-cicd-project.net
    ```
 
-1. create an S3 bucket
+1. Create an S3 bucket
    ```sh
     aws s3 mb s3://farhaan-cicd-project.net
    ```
@@ -79,7 +82,7 @@
    #     set machineType: t2.micro 
     ```
 
-1. Setup the CLuster:
+1. Setup the Cluster:
     ```sh
     kops update cluster demo.farhaan-cicd-project.net --yes
     ```
