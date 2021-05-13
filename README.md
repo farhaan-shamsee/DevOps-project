@@ -22,4 +22,16 @@
     -   3.`Set Up Kubernetes` : To set up Kubernetes management Server which will create Kubernetes cluster using KOPS.
     -   4.`Creating CI-CD` : Contains steps that needs to be followed after setting up the servers like creating Jobs on Jenkins Server
 
+1. To setup the insfrastructure I have used **Terraform**. Each folder has its own terraform script and it needs to be initiated from inside the folder. Each has its own User_Data script.  Below are the commands that can be used to initiate terraform:
+    ```sh
+    #For running the script first time
+    terraform init
+    #To check the syntax and for any errors
+    terraform plan
+    #To create the resources
+    terraform apply
+    #To destroy the resources
+    terraform destroy
+    ```
+
 1. Each folder has a seperate README file which can be used to understand the working of that configuration.
